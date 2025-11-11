@@ -743,20 +743,20 @@ main_menu() {
 	cat <<- EOF
 		[38;2;0;51;255m[${WHITE}:${WHITE}:[38;2;0;51;255m][0m Select An Attack For Your Victim [38;2;0;51;255m[${WHITE}:${WHITE}:[38;2;0;51;255m][0m
 
-		[38;2;0;51;255m[${WHITE}01[38;2;0;51;255m]${CYAN} Facebook      [38;2;0;51;255m[${WHITE}11[38;2;0;51;255m]${CYAN} Twitch       [38;2;0;51;255m[${WHITE}21[38;2;0;51;255m]${CYAN} DeviantArt
-[38;2;0;51;255m[${WHITE}02[38;2;0;51;255m]${CYAN} Instagram     [38;2;0;51;255m[${WHITE}12[38;2;0;51;255m]${CYAN} Pinterest    [38;2;0;51;255m[${WHITE}22[38;2;0;51;255m]${CYAN} Badoo
-[38;2;0;51;255m[${WHITE}03[38;2;0;51;255m]${CYAN} Google        [38;2;0;51;255m[${WHITE}13[38;2;0;51;255m]${CYAN} Snapchat     [38;2;0;51;255m[${WHITE}23[38;2;0;51;255m]${CYAN} Origin
-[38;2;0;51;255m[${WHITE}04[38;2;0;51;255m]${CYAN} Microsoft     [38;2;0;51;255m[${WHITE}14[38;2;0;51;255m]${CYAN} Linkedin     [38;2;0;51;255m[${WHITE}24[38;2;0;51;255m]${CYAN} DropBox	
-[38;2;0;51;255m[${WHITE}05[38;2;0;51;255m]${CYAN} Netflix       [38;2;0;51;255m[${WHITE}15[38;2;0;51;255m]${CYAN} Ebay         [38;2;0;51;255m[${WHITE}25[38;2;0;51;255m]${CYAN} Yahoo		
-[38;2;0;51;255m[${WHITE}06[38;2;0;51;255m]${CYAN} Paypal        [38;2;0;51;255m[${WHITE}16[38;2;0;51;255m]${CYAN} Quora        [38;2;0;51;255m[${WHITE}26[38;2;0;51;255m]${CYAN} Wordpress
-[38;2;0;51;255m[${WHITE}07[38;2;0;51;255m]${CYAN} Steam         [38;2;0;51;255m[${WHITE}17[38;2;0;51;255m]${CYAN} Protonmail   [38;2;0;51;255m[${WHITE}27[38;2;0;51;255m]${CYAN} Yandex			
-[38;2;0;51;255m[${WHITE}08[38;2;0;51;255m]${CYAN} Twitter       [38;2;0;51;255m[${WHITE}18[38;2;0;51;255m]${CYAN} Spotify      [38;2;0;51;255m[${WHITE}28[38;2;0;51;255m]${CYAN} StackoverFlow
-[38;2;0;51;255m[${WHITE}09[38;2;0;51;255m]${CYAN} Playstation   [38;2;0;51;255m[${WHITE}19[38;2;0;51;255m]${CYAN} Reddit       [38;2;0;51;255m[${WHITE}29[38;2;0;51;255m]${CYAN} Vk
-[38;2;0;51;255m[${WHITE}10[38;2;0;51;255m]${CYAN} Tiktok        [38;2;0;51;255m[${WHITE}20[38;2;0;51;255m]${CYAN} Adobe        [38;2;0;51;255m[${WHITE}30[38;2;0;51;255m]${CYAN} XBOX
-[38;2;0;51;255m[${WHITE}31[38;2;0;51;255m]${CYAN} Mediafire     [38;2;0;51;255m[${WHITE}32[38;2;0;51;255m]${CYAN} Gitlab       [38;2;0;51;255m[${WHITE}33[38;2;0;51;255m]${CYAN} Github
-[38;2;0;51;255m[${WHITE}34[38;2;0;51;255m]${CYAN} Discord       [38;2;0;51;255m[${WHITE}35[38;2;0;51;255m]${CYAN} Roblox 
+		${WHITE}[${CYAN}01${WHITE}] ${GREEN}Facebook      ${WHITE}[${CYAN}11${WHITE}] ${GREEN}Twitch       ${WHITE}[${CYAN}21${WHITE}] ${GREEN}DeviantArt
+${WHITE}[${CYAN}02${WHITE}] ${GREEN}Instagram     ${WHITE}[${CYAN}12${WHITE}] ${GREEN}Pinterest    ${WHITE}[${CYAN}22${WHITE}] ${GREEN}Badoo
+${WHITE}[${CYAN}03${WHITE}] ${GREEN}Google        ${WHITE}[${CYAN}13${WHITE}] ${GREEN}Snapchat     ${WHITE}[${CYAN}23${WHITE}] ${GREEN}Origin
+${WHITE}[${CYAN}04${WHITE}] ${GREEN}Microsoft     ${WHITE}[${CYAN}14${WHITE}] ${GREEN}Linkedin     ${WHITE}[${CYAN}24${WHITE}] ${GREEN}DropBox	
+${WHITE}[${CYAN}05${WHITE}] ${GREEN}Netflix       ${WHITE}[${CYAN}15${WHITE}] ${GREEN}Ebay         ${WHITE}[${CYAN}25${WHITE}] ${GREEN}Yahoo		
+${WHITE}[${CYAN}06${WHITE}] ${GREEN}Paypal        ${WHITE}[${CYAN}16${WHITE}] ${GREEN}Quora        ${WHITE}[${CYAN}26${WHITE}] ${GREEN}Wordpress
+${WHITE}[${CYAN}07${WHITE}] ${GREEN}Steam         ${WHITE}[${CYAN}17${WHITE}] ${GREEN}Protonmail   ${WHITE}[${CYAN}27${WHITE}] ${GREEN}Yandex			
+${WHITE}[${CYAN}08${WHITE}] ${GREEN}Twitter       ${WHITE}[${CYAN}18${WHITE}] ${GREEN}Spotify      ${WHITE}[${CYAN}28${WHITE}] ${GREEN}StackoverFlow
+${WHITE}[${CYAN}09${WHITE}] ${GREEN}Playstation   ${WHITE}[${CYAN}19${WHITE}] ${GREEN}Reddit       ${WHITE}[${CYAN}29${WHITE}] ${GREEN}Vk
+${WHITE}[${CYAN}10${WHITE}] ${GREEN}Tiktok        ${WHITE}[${CYAN}20${WHITE}] ${GREEN}Adobe        ${WHITE}[${CYAN}30${WHITE}] ${GREEN}XBOX
+${WHITE}[${CYAN}31${WHITE}] ${GREEN}Mediafire     ${WHITE}[${CYAN}32${WHITE}] ${GREEN}Gitlab       ${WHITE}[${CYAN}33${WHITE}] ${GREEN}Github
+${WHITE}[${CYAN}34${WHITE}] ${GREEN}Discord       ${WHITE}[${CYAN}35${WHITE}] ${GREEN}Roblox 
 
-[38;2;0;51;255m[${WHITE}99[38;2;0;51;255m]${CYAN} About         [38;2;0;51;255m[${WHITE}00[38;2;0;51;255m]${CYAN} Exit
+${WHITE}[${CYAN}99${WHITE}] ${GREEN}About         ${WHITE}[${CYAN}00${WHITE}] ${GREEN}Exit
 
 	EOF
 	
