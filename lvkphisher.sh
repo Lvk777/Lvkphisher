@@ -367,7 +367,7 @@ about() {
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : [38;2;0;255;170m"
+	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : ${WHITE}"
 	case $REPLY in 
 		99)
 			msg_exit;;
@@ -610,14 +610,14 @@ custom_url() {
 site_facebook() {
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Advanced Voting Poll Login Page
-		${RED}[${WHITE}03${RED}]${ORANGE} Fake Security Login Page
-		${RED}[${WHITE}04${RED}]${ORANGE} Facebook Messenger Login Page
+		${WHITE}[[38;2;0;51;255m01${WHITE}]${WHITE} Traditional Login Page
+		${WHITE}[[38;2;0;51;255m02${WHITE}]${WHITE} Advanced Voting Poll Login Page
+		${WHITE}[[38;2;0;51;255m03${WHITE}]${WHITE} Fake Security Login Page
+		${WHITE}[[38;2;0;51;255m04${WHITE}]${WHITE} Facebook Messenger Login Page
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : ${BLUE}"
+	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : ${WHITE}"
 
 	case $REPLY in 
 		1 | 01)
@@ -646,14 +646,14 @@ site_facebook() {
 site_instagram() {
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Auto Followers Login Page
-		${RED}[${WHITE}03${RED}]${ORANGE} 1000 Followers Login Page
-		${RED}[${WHITE}04${RED}]${ORANGE} Blue Badge Verify Login Page
+		${WHITE}[[38;2;0;51;255m01${WHITE}]${WHITE} Traditional Login Page
+		${WHITE}[[38;2;0;51;255m02${WHITE}]${WHITE} Auto Followers Login Page
+		${WHITE}[[38;2;0;51;255m03${WHITE}]${WHITE} 1000 Followers Login Page
+		${WHITE}[[38;2;0;51;255m04${WHITE}]${WHITE} Blue Badge Verify Login Page
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : [38;2;0;255;170m"
+	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : ${WHITE}"
 
 	case $REPLY in 
 		1 | 01)
@@ -688,7 +688,7 @@ site_gmail() {
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : [38;2;0;255;170m"
+	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : ${WHITE}"
 
 	case $REPLY in 
 		1 | 01)
@@ -713,12 +713,12 @@ site_gmail() {
 site_vk() {
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Advanced Voting Poll Login Page
+		${WHITE}[[38;2;0;51;255m01${WHITE}]${WHITE} Traditional Login Page
+		${WHITE}[[38;2;0;51;255m02${WHITE}]${WHITE} Advanced Voting Poll Login Page
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : ${BLUE}"
+	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : ${WHITE}"
 
 	case $REPLY in 
 		1 | 01)
@@ -758,7 +758,7 @@ main_menu() {
 
 	EOF
 	
-	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : [38;2;0;255;170m"
+	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select an option : ${WHITE}"
 
 	case $REPLY in 
 		1 | 01)
