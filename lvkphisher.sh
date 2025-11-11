@@ -234,16 +234,16 @@ banner_small() {
 
 ## Dependencies
 dependencies() {
-	echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing required packages..."
+	echo -e "\n${GREEN}[${WHITE}+${GREEN}][38;2;0;255;170m Installing required packages..."
 
 	if [[ -d "/data/data/com.termux/files/home" ]]; then
 		if [[ ! $(command -v proot) ]]; then
-			echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing package : ${ORANGE}proot${CYAN}"${WHITE}
+			echo -e "\n${GREEN}[${WHITE}+${GREEN}][38;2;0;255;170m Installing package : ${RED}proot[38;2;0;255;170m"${WHITE}
 			pkg install proot resolv-conf -y
 		fi
 
 		if [[ ! $(command -v tput) ]]; then
-			echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing package : ${ORANGE}ncurses-utils${CYAN}"${WHITE}
+			echo -e "\n${GREEN}[${WHITE}+${GREEN}][38;2;0;255;170m Installing package : ${RED}ncurses-utils[38;2;0;255;170m"${WHITE}
 			pkg install ncurses-utils -y
 		fi
 	fi
@@ -254,7 +254,7 @@ dependencies() {
 		pkgs=(php curl unzip)
 		for pkg in "${pkgs[@]}"; do
 			type -p "$pkg" &>/dev/null || {
-				echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing package : ${ORANGE}$pkg${CYAN}"${WHITE}
+				echo -e "\n${GREEN}[${WHITE}+${GREEN}][38;2;0;255;170m Installing package : ${RED}$pkg[38;2;0;255;170m"${WHITE}
 				if [[ $(command -v pkg) ]]; then
 					pkg install "$pkg" -y
 				elif [[ $(command -v apt) ]]; then
