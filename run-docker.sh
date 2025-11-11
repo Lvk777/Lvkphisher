@@ -10,7 +10,7 @@ fi
 
 CONTAINER="lvkphisher"
 IMAGE="htrtech/lvkphisher:latest"
-IMG_MIRROR="ghcr.io/htr-tech/lvkphisher:latest"
+IMG_MIRROR="ghcr.io/lvk777/lvkphisher:latest"
 MOUNT_LOCATION=${BASE_DIR}/auth
 check_container=$(docker ps --all --format "{{.Names}}")
 
