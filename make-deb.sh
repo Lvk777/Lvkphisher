@@ -30,9 +30,9 @@ cat <<- CONTROL_EOF > ./build_env/DEBIAN/control
 Package: ${_PACKAGE}
 Version: ${_VERSION}
 Architecture: ${_ARCH}
-Maintainer: @htr-tech
+Maintainer: @lvk777
 Depends: ${_depend}
-Homepage: https://github.com/htr-tech/lvkphisher
+Homepage: https://github.com/lvk777/lvkphisher
 Description: An automated phishing tool with 30+ templates. This Tool is made for educational purpose only !
 CONTROL_EOF
 
