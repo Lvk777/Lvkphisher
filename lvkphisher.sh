@@ -249,7 +249,7 @@ dependencies() {
 	fi
 
 	if [[ $(command -v php) && $(command -v curl) && $(command -v unzip) ]]; then
-		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Packages already installed."
+		echo -e "\n${GREEN}[${WHITE}+${GREEN}][38;2;0;255;170m Packages already installed."
 	else
 		pkgs=(php curl unzip)
 		for pkg in "${pkgs[@]}"; do
