@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# https://github.com/htr-tech/lvkphisher
+# https://github.com/lvk777/lvkphisher
 
 if [[ $(uname -o) == *'Android'* ]];then
 	LVKPHISHER_ROOT="/data/data/com.termux/files/usr/opt/lvkphisher"
