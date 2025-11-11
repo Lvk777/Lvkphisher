@@ -600,9 +600,9 @@ custom_url() {
 		processed_url="Unable to Short URL"
 	fi
 
-	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 1 : ${[38;2;0;255;170m}$url"
-	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 2 : ${[38;2;0;255;170m}$processed_url"
-	[[ $processed_url != *"Unable"* ]] && echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 3 : [38;2;0;255;170m}$masked_url"
+	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 1 : ${GREEN}$url"
+	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 2 : ${ORANGE}$processed_url"
+	[[ $processed_url != *"Unable"* ]] && echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 3 : ${ORANGE}$masked_url"
 }
 
 ## Facebook
