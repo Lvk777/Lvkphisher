@@ -521,13 +521,13 @@ tunnel_menu() {
 	{ clear; banner_small; }
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Localhost
-		${RED}[${WHITE}02${RED}]${ORANGE} Cloudflared  ${RED}[${CYAN}Auto Detects${RED}]
-		${RED}[${WHITE}03${RED}]${ORANGE} LocalXpose   ${RED}[${CYAN}NEW! Max 15Min${RED}]
+		[38;2;0;255;170m[[38;2;0;51;255m01[38;2;0;255;170m]${WHITE} Localhost
+		[38;2;0;255;170m[[38;2;0;51;255m02[38;2;0;255;170m]${WHITE} Cloudflared  ${RED}[${CYAN}Auto Detects${RED}]
+		[38;2;0;255;170m[[38;2;0;51;255m03[38;2;0;255;170m]${WHITE} LocalXpose   ${RED}[${CYAN}NEW! Max 15Min${RED}]
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select a port forwarding service : ${BLUE}"
+	read -p "${RED}[${WHITE}-${RED}][38;2;0;255;170m Select a port forwarding service : ${BLUE}"
 
 	case $REPLY in 
 		1 | 01)
