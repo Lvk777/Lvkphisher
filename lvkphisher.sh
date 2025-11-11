@@ -493,7 +493,7 @@ start_loclx() {
 	echo -e "\n${RED}[[38;2;51;153;255m-${RED}][38;2;0;255;170m Initializing... ${WHITE}( ${BLUE}http://$HOST:$PORT ${WHITE})"
 	{ sleep 1; setup_site; localxpose_auth; }
 	echo -e "\n"
-	read -n1 -p "${RED}[[38;2;51;153;255m?${RED}]${ORANGE} Change Loclx Server Region? ${WHITE}[${BLUE}y${WHITE}/${BLUE}N${WHITE}]:[38;2;0;255;170m " opinion
+	read -n1 -p "${RED}[[38;2;51;153;255m?${RED}][38;2;0;51;255m Change Loclx Server Region? [38;2;51;153;255m[${BLUE}y[38;2;51;153;255m/${BLUE}N[38;2;51;153;255m]:${WHITE} " opinion
 	[[ ${opinion,,} == "y" ]] && loclx_region="eu" || loclx_region="us"
 	echo -e "\n\n${RED}[[38;2;51;153;255m-${RED}][38;2;0;255;170m Launching LocalXpose..."
 
